@@ -1,5 +1,4 @@
 import { globalCss } from "@stitches/react";
-import { GetStaticProps } from "next";
 import { styled } from "../global.styles";
 
 export const GlobalRemoveCss = globalCss({
@@ -62,3 +61,5 @@ export const CardHero = styled('div', {
     height: '100%',
   }
 });
+
+export default GlobalRemoveCss;

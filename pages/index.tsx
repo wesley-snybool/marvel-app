@@ -12,6 +12,10 @@ type HeroProps = {
   };
 };
 
+type ResultsProps = {
+  results: HeroProps[];
+};
+
 const Global = globalCss({
   "*": {
     margin: 0,
@@ -19,34 +23,18 @@ const Global = globalCss({
   },
 });
 
-const Home: NextPage = ({
-  results,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home: NextPage<ResultsProps> = ({ results }) => {
   const [characterData, setCharacterData] = useState<HeroProps[]>([]);
 
-  const data: HeroProps[] = results;
-
   useEffect(() => {
-    setCharacterData(data);
-    /*     try {
-      api
-        .get("characters", { params: { imit: 20, offset: 20 } })
-        .then((response) => {
-          setCharacterData(response.data.data.results);
-        });
-    } catch (error) {} */
-    /*     api
-      .get("characters", { params: { limit: 100, offset: 20 } })
-      .then((response) => {
-        setCharacterData(response.data.data.results);
-      }); */
+    setCharacterData(results);
   }, []);
   return (
     <div className={Styled.GlobalRemoveCss()}>
       <Styled.Main>
         <h1>Welcome to Marvel API</h1>
         <Styled.ContainerCardHero>
-          {characterData.map((item: HeroProps, index: number) => {
+          {results.map((item, index: number) => {
             return (
               <Styled.CardHero key={`${item.name}-${index}`}>
                 <span>{item?.name}</span>
@@ -69,13 +57,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   });
 
   const results: HeroProps[] = fetchData.data.data.results;
-
-  /*   api
-    .get("characters", { params: { limit: 100, offset: 20 } })
-    .then((response) => {
-      console.log(response);
-    });
-  console.log(dados); */
+  console.log(results);
 
   return {
     props: {

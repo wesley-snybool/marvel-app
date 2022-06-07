@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const apikey = '88afc73c960dd17242a16a42cc8c492b'
-const hash = '08f49c78ef7ee6d774933ae9e5298f71'
-const ts = 1
-const apiUrl = `http://gateway.marvel.com/v1/public/`
+const apikey = process.env.NEXT_API_KEY;
+const hash = process.env.NEXT_APP_HASH;
+const ts = process.env.NEXT_APP_TS;
+const apiUrl = process.env.NEXT_APP_ENDPOINT;
 
 export const api = axios.create({
   baseURL: apiUrl,
