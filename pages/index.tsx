@@ -40,7 +40,7 @@ const Home: NextPage<ResultsProps> = ({ results }) => {
                 <span>{item?.name}</span>
                 <img
                   src={`${item?.thumbnail?.path}.${item?.thumbnail?.extension}`}
-                  alt="Imagem herói marvel"
+                  alt="Imagem herói marvel coco"
                 />
               </Styled.CardHero>
             );
