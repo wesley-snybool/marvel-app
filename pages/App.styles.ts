@@ -1,12 +1,4 @@
-import { globalCss } from "@stitches/react";
 import { styled } from "../global.styles";
-
-export const GlobalRemoveCss = globalCss({
-  '*': {
-    margin: '0',
-    padding: '0',
-  }
-})
 
 export const Main = styled('div', {
   backgroundColor: '#1C3144',
@@ -62,4 +54,4 @@ export const CardHero = styled('div', {
   }
 });
 
-export default GlobalRemoveCss;
+export default Main;
