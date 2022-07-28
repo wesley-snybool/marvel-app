@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "husky": {
     "hooks": {
-      "pre-commit": "yarn build"
+      "pre-commit": "yarn start"
     }
   },
   "private": true,
