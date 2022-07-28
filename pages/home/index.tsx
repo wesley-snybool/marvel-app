@@ -1,8 +1,8 @@
-import { css, globalCss } from "@stitches/react";
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-import { useEffect, useState } from "react";
-import * as Styled from "../App.styles";
-import { api } from "../api/config";
+import { css, globalCss } from '@stitches/react';
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
+import { useEffect, useState } from 'react';
+import * as Styled from '../App.styles';
+import { api } from '../api/config';
 
 type HeroProps = {
   name: string;
@@ -17,7 +17,7 @@ type ResultsProps = {
 };
 
 const Global = globalCss({
-  "*": {
+  '*': {
     margin: 0,
     padding: 0,
   },
@@ -28,7 +28,7 @@ const Home: NextPage<ResultsProps> = ({ results }) => {
 
   useEffect(() => {
     const marvel = api
-      .get("characters", {
+      .get('characters', {
         params: { limit: 100, offset: 20 },
       })
       .then((result) => {
@@ -36,7 +36,7 @@ const Home: NextPage<ResultsProps> = ({ results }) => {
       });
 
     setCharacterData(results);
-  }, []);
+  }, [results]);
   return (
     <div>
       <Styled.Main>
@@ -60,7 +60,7 @@ const Home: NextPage<ResultsProps> = ({ results }) => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const fetchData = await api.get("characters", {
+  const fetchData = await api.get('characters', {
     params: { limit: 100, offset: 70 },
   });
 

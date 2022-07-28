@@ -1,17 +1,13 @@
 {
   "name": "marvel-app-typescript",
   "version": "0.1.0",
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn start"
-    }
-  },
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",

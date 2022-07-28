@@ -28,7 +28,7 @@ const Home: NextPage<ResultsProps> = ({ results }) => {
 
   useEffect(() => {
     setCharacterData(results);
-  }, []);
+  }, [results]);
   return (
     <div>
       <Styled.Main>

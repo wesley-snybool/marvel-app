@@ -1,6 +1,6 @@
 import { styled } from "@stitches/react";
 
-export const MainLoguin = styled('div', {
+const MainLoguin = styled('div', {
   width: '50%',
   height: '450px',
   backgroundColor: '#1C3144',
@@ -27,3 +27,5 @@ export const MainLoguin = styled('div', {
     margin: '50px',
   }
 });
+
+export default MainLoguin;
