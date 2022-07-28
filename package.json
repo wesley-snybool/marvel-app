@@ -2,7 +2,7 @@
   "name": "marvel-app-typescript",
   "version": "0.1.0",
   "husky": {
-    "pre-commit": "echo ['teste']"
+    "pre-commit": "yarn build"
   },
   "private": true,
   "scripts": {
