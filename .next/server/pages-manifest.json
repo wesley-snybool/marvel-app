@@ -3,5 +3,13 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/about": "pages/about.html",
+  "/api/config": "pages/api/config.js",
+  "/api/hello": "pages/api/hello.js",
+  "/dashboard": "pages/dashboard.html",
+  "/": "pages/index.html",
+  "/login": "pages/login.html",
+  "/login/styles": "pages/login/styles.html",
+  "/home": "pages/home.js",
+  "/404": "pages/404.html"
 }
