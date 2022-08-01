@@ -1,5 +1,5 @@
-import { css, globalCss } from '@stitches/react';
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
+import { globalCss } from '@stitches/react';
+import type { GetStaticProps, NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import * as Styled from '../../src/App.styles';
 import { api } from '../api/config';
@@ -15,13 +15,6 @@ type HeroProps = {
 type ResultsProps = {
   results: HeroProps[];
 };
-
-const Global = globalCss({
-  '*': {
-    margin: 0,
-    padding: 0,
-  },
-});
 
 const Home: NextPage<ResultsProps> = ({ results }) => {
   const [characterData, setCharacterData] = useState<HeroProps[]>([]);
