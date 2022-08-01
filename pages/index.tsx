@@ -26,6 +26,7 @@ const MainContainer = styled('div', {
 
 const Main: NextPage = () => {
   const router = useRouter();
+  console.log('asdasd');
 
   return (
     <MainContainer>
