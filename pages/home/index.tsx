@@ -1,7 +1,7 @@
 import { css, globalCss } from '@stitches/react';
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import { useEffect, useState } from 'react';
-import * as Styled from '../App.styles';
+import * as Styled from '../../src/App.styles';
 import { api } from '../api/config';
 
 type HeroProps = {

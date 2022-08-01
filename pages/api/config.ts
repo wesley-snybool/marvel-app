@@ -6,10 +6,13 @@ const ts = process.env.NEXT_APP_TS;
 const apiUrl = process.env.NEXT_APP_ENDPOINT;
 
 export const api = axios.create({
-  baseURL: apiUrl,
   params: {
     ts,
     apikey,
     hash,
-  }
-})
+  },
+  headers: { Accept: 'text/html, application/json, text/plain, */*' },
+  baseURL: apiUrl,
+  proxy: undefined,
+  method: 'get',
+});
