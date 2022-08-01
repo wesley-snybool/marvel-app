@@ -16,7 +16,7 @@ const MainContainer = styled('div', {
     borderRadius: '5px',
     border: 'none',
     cursor: 'pointer',
-    color: 'DarkBlue',
+    color: '#2A385E',
 
     '&:hover': {
       filter: 'brightness(0.95)',
