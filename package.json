@@ -13,17 +13,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
-  },
-  "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.tsx": [
-      "eslint --fix",
-      "git add"
-    ]
+    "prepare": "husky install",
+    "lint-staged": {
+      "*.ts": [
+        "eslint --fix",
+        "git add"
+      ],
+      "*.tsx": [
+        "eslint --fix",
+        "git add"
+      ]
+    }
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",
