@@ -26,12 +26,12 @@ const MainContainer = styled('div', {
 
 const Main: NextPage = () => {
   const router = useRouter();
-  console.log('');
+  console.log('sajsdfksjd');
 
   return (
     <MainContainer>
       <button onClick={() => router.push('/home')}>
-        Faça loguin para continuar
+        Faça loguin para continuar aqui carai
       </button>
     </MainContainer>
   );
