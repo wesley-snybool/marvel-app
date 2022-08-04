@@ -1,7 +1,5 @@
 import { styled } from '@stitches/react';
 import { useRouter } from 'next/router';
-import { useContext } from 'react';
-import { LoginContext } from '../../src/contexts/loguin/contextLogin';
 import { useLogin } from '../../src/hooks/loginHook';
 
 const Main = styled('main', {
@@ -53,9 +51,7 @@ const Login = styled('div', {
 const Loguin = () => {
   const router = useRouter();
   const userState = useLogin();
-  let userLogeed = userState?.userIsLogeed;
-
-  console.log(userState?.userIsLogeed);
+  const userLogeed = userState?.userIsLogeed;
 
   const handleLogin = () => {
     userState?.setUserISLogeed(true);

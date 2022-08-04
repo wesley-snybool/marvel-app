@@ -5,7 +5,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn build",
-      "pre-push": "yarn start"
+      "pre-push": "yarn build"
     }
   },
   "scripts": {
@@ -16,11 +16,11 @@
     "prepare": "husky install",
     "lint-staged": {
       "*.ts": [
-        "eslint --fix",
+        "next lint",
         "git add"
       ],
       "*.tsx": [
-        "eslint --fix",
+        "next lint",
         "git add"
       ]
     }

@@ -9,16 +9,12 @@ const GlobalRemoveCss = globalCss({
   },
 });
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <LoginProvider>
-        <main className={GlobalRemoveCss()}>
-          <Component {...pageProps} />
-        </main>
-      </LoginProvider>
-    </>
-  );
-}
+const MyApp = ({ Component, pageProps }: AppProps) => (
+  <LoginProvider>
+    <main className={GlobalRemoveCss()}>
+      <Component {...pageProps} />
+    </main>
+  </LoginProvider>
+);
 
 export default MyApp;

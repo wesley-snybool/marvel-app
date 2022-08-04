@@ -1,4 +1,4 @@
-import { styled } from "@stitches/react";
+import { styled } from '@stitches/react';
 
 const MainLoguin = styled('div', {
   width: '50%',
@@ -18,14 +18,14 @@ const MainLoguin = styled('div', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: "0 10px",
+    padding: '0 10px',
     borderRadius: '20px',
     margin: '10px',
   },
   h1: {
     color: 'lightGray',
     margin: '50px',
-  }
+  },
 });
 
 export default MainLoguin;

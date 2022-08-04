@@ -1,13 +1,11 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server';
 
 export default function middleware(req: NextRequest) {
   const { origin, pathname, searchParams } = req.nextUrl;
 
-  const urlDest = '/login'
-  const userLogeed = searchParams
-  const privatePaths = ['/', '/dashboard']
-  const publicPaths = ['/', '/about']
-
+  const urlDest = '/login';
+  const userLogeed = searchParams;
+  const privatePaths = ['/', '/dashboard'];
 
   if (!userLogeed && privatePaths.includes(pathname)) {
     return NextResponse.redirect(`${origin}${urlDest}`);

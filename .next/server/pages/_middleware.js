@@ -1065,10 +1065,6 @@ function middleware(req) {
         "/",
         "/dashboard"
     ];
-    const publicPaths = [
-        "/",
-        "/about"
-    ];
     if (!userLogeed && privatePaths.includes(pathname)) {
         return next_server__WEBPACK_IMPORTED_MODULE_0__.NextResponse.redirect(`${origin}${urlDest}`);
     }

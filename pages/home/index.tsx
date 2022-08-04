@@ -1,8 +1,7 @@
-import { globalCss } from '@stitches/react';
 import type { GetStaticProps, NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import * as Styled from '../../src/App.styles';
-import { api } from '../api/config';
+import api from '../api/config';
 
 type HeroProps = {
   name: string;
@@ -17,17 +16,10 @@ type ResultsProps = {
 };
 
 const Home: NextPage<ResultsProps> = ({ results }) => {
+  // eslint-disable-next-line no-unused-vars
   const [characterData, setCharacterData] = useState<HeroProps[]>([]);
 
   useEffect(() => {
-    const marvel = api
-      .get('characters', {
-        params: { limit: 100, offset: 20 },
-      })
-      .then((result) => {
-        console.log(result);
-      });
-
     setCharacterData(results);
   }, [results]);
   return (
@@ -35,33 +27,31 @@ const Home: NextPage<ResultsProps> = ({ results }) => {
       <Styled.Main>
         <h1>Welcome to Marvel API</h1>
         <Styled.ContainerCardHero>
-          {results?.map((item, index: number) => {
-            return (
-              <Styled.CardHero key={`${item.name}-${index}`}>
-                <span>{item?.name}</span>
-                <img
-                  src={`${item?.thumbnail?.path}.${item?.thumbnail?.extension}`}
-                  alt="Imagem herói marvel"
-                />
-              </Styled.CardHero>
-            );
-          })}
+          {results?.map((item) => (
+            <Styled.CardHero key={`${item.name}-${'bsdas'}`}>
+              <span>{item?.name}</span>
+              <img
+                src={`${item?.thumbnail?.path}.${item?.thumbnail?.extension}`}
+                alt="Imagem herói marvel"
+              />
+            </Styled.CardHero>
+          ))}
         </Styled.ContainerCardHero>
       </Styled.Main>
     </div>
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const fetchData = await api.get('characters', {
     params: { limit: 100, offset: 70 },
   });
 
-  const results: HeroProps[] = fetchData.data.data.results;
+  const { results } = fetchData.data.data;
 
   return {
     props: {
-      results: results,
+      results,
     },
   };
 };
